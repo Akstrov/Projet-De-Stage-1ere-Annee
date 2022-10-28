@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="text-center">
+    
+    <h1 class="display-4">E-Services</h1>
+    <div class="container row">
+        <div class="list-group col-6">
+            <a data-id="particulier" href="#particulier" class="list-group-item">Particulier</a>
+            <a data-id="pro" href="#pro" class="list-group-item">Professionnel</a>
+            <a data-id="mobiles" href="#mobiles" class="list-group-item">Service mobile</a>
+        </div>
+        <div class="content-area col-6">
+            <div id="particulier" class="list-group">
+                <a href="http://reclamation.mtpnet.gov.ma/index.php5?page=citoyen.AccueilCitoyen" target="_blank" rel="noreferrer noopener" class="list-group-item"><i class="fa-solid fa-flag"></i>  Reclamation en ligne</a>
+            </div>
+            <div id="mobiles" class="list-group">
+                <a href="http://maroute.mtpnet.gov.ma/html/#/app/home" target="_blank" rel="noreferrer noopener" class="list-group-item"><i class="fa-solid fa-road"></i> Ma route</a>
+                <a href="http://onelink.to/maplage" target="_blank" rel="noreferrer noopener" class="list-group-item"><i class="fa-sharp fa-solid fa-umbrella-beach"></i> Ma plage</a>
+            </div>
+            <div id="pro" class="list-group">
+                <a href="http://www.equipement.gov.ma/Espace-Fournisseurs/" target="_blank" rel="noreferrer noopener" class="list-group-item"><i class="fa-solid fa-cart-shopping"></i> Espace achat</a>
+                <a href="http://www.equipement.gov.ma/Ingenierie/Systemes-regissant-la-Profession/Pages/Qualification-et-classification-des-Entreprises-BTP.aspx" target="_blank" rel="noreferrer noopener" class="list-group-item"><i class="fa-solid fa-building"></i>  Qualification et classification des entreprises de BTP</a>
+                <a href="https://ajal.finances.gov.ma/" target="_blank" rel="noreferrer noopener" class="list-group-item"><i class="fa-solid fa-calendar"></i>  Ajal</a>
+                <a href="http://www.equipement.gov.ma/Ingenierie/Pages/Revision-des-prix-baremes-indexation.aspx" target="_blank" rel="noreferrer noopener" class="list-group-item"><i class="fa-solid fa-money-bill"></i>  Révision des prix – barèmes d’indexation</a>
+                <a href="http://www.equipement.gov.ma/Ingenierie/Systemes-regissant-la-Profession/Pages/Qualification-et-Classification-des-Laboratoires-de-BTP.aspx" target="_blank" rel="noreferrer noopener" class="list-group-item"><i class="fa-solid fa-flask-vial"></i>  Qualification et classification des laboratoires de BTP</a>
+                <a href="http://www.equipement.gov.ma/Ingenierie/Systemes-regissant-la-Profession/Pages/Agrement-des-Bureaux-d-Etudes.aspx" target="_blank" rel="noreferrer noopener" class="list-group-item"><i class="fa-solid fa-computer"></i>  Agréments des bureaux d’étude</a>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('div.content-area div').hide();
+            $('a').on("click", function () {
+                $('a').removeClass("active")
+                $(this).addClass('active')
+
+                $('div.content-area div').hide(); // Hide all divs in the content-area
+                $('div#' + $(this).attr('data-id')).show(); // Show the corresponding div
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        document.getElementById("services").classList.add('active');
+        document.getElementById("home").classList.remove('active');
+        document.getElementById("mission").classList.remove('active');
+    </script>
+}
+

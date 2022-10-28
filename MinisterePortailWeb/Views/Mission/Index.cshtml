@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-center">
+    <br />
+    <h2>Ministère de l’Equipement et de l’Eau</h2>
+    <p>
+        Le Ministère de l’Équipement et de l’Eau prend en charge des secteurs vitaux qui jouent un rôle essentiel dans le développement économique et social du pays, participe directement ou indirectement à l’aménagement du territoire, à la réduction des disparités régionales et à la création d’un environnement propice pour l’investissement.
+
+        Sa mission consiste à élaborer, mettre en œuvre et coordonner la politique du Gouvernement relative au secteur des infrastructures routières, portuaires, hydrauliques et de la météorologie.
+    </p>
+    <h3>Structure organisationnelle :</h3>
+    <p>
+        Le Ministère de l'Equipement et de l'Eau comprend, en outre du cabinet du Ministre, l’administration centrale et les services déconcentrés.
+
+        L’administration centrale comprend :
+    </p>
+    <div class="container row">
+        <div class="side-bar col-6">
+            <ul class="list-group list-unstyled px-2">
+                <li  class="list-group-item"><a  class="text-decoration-none">Le Secrétariat Général</a></li>
+                <li class="list-group-item"><a  class="text-decoration-none">Le Conseil Général de l’Equipement et de l’Eau</a></li>
+                <li class="list-group-item"><a  class="text-decoration-none">L'Inspection Générale</a></li>
+                <li data-id="strategie" class="list-group-item"><a href="#strategie" class="text-decoration-none">La Direction Générale de la Stratégie, des Ressources et du Numérique qui comprend :</a></li>
+                <li data-id="route" class="list-group-item"><a href="#route" class="text-decoration-none">La Direction Générale des Routes qui comprend :</a></li>
+                <li data-id="Hydraulique" class="list-group-item"><a href="#Hydraulique" class="text-decoration-none">La Direction Générale de l’Hydraulique qui comprend :</a></li>
+                <li data-id="meteorologie" class="list-group-item"><a href="#meteorologie" class="text-decoration-none">La Direction Générale de la Météorologie qui comprend :</a></li>
+                <li class="list-group-item"><a class="text-decoration-none">La Direction des Ports et du Domaine Public Maritime</a></li>
+            </ul>
+        </div>
+        <div class="content-area col-6">
+            <div id="strategie" class="list-group">
+                    <p class="list-group-item">La Direction de la Stratégie et du Financement</p>
+                    <p class="list-group-item">La Direction des Ressources Humaines</p>
+                    <p class="list-group-item">La Direction des Affaires Administratives et Juridiques</p>
+                    <p class="list-group-item">La Direction des Systèmes d'Information et du Numérique</>
+                    <p class="list-group-item">La Direction des Affaires Techniques et des Relations avec la Profession</p>
+            </div>
+            <div id="route" class="list-group">
+                <p class="list-group-item">La Direction des Etudes, du Développement et de la Recherche Routière</p>
+                <p class="list-group-item">La Direction des Travaux et de l'Exploitation Routière</p>
+            </div>
+            <div id="Hydraulique" class="list-group">
+                <p class="list-group-item">La Direction de la Recherche et de la Planification de l'Eau</p>
+                <p class="list-group-item">La Direction des Aménagements Hydrauliques</p>
+            </div>
+            <div id="meteorologie" class="list-group">
+                <p class="list-group-item">La Direction des Prévisions et des Recherches Météorologiques</p>
+                <p class="list-group-item">La Direction des Systèmes d’Observation.</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('div.content-area div').hide();
+            $('li').on("click", function () {
+                $('li').removeClass("active")
+                $(this).addClass('active')
+
+                $('div.content-area div').hide(); // Hide all divs in the content-area
+                $('div#' + $(this).attr('data-id')).show(); // Show the corresponding div
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        document.getElementById("mission").classList.add('active');
+        document.getElementById("home").classList.remove('active');
+        document.getElementById("services").classList.remove('active');
+
+    </script>
+}
+
+
+
